@@ -43,7 +43,16 @@ def load_mask_image(mask_filename):
         img_mask = img_mask.resize((32,32))
         np_mask = np.array(img_mask)
     margin = get_mask_margin(np_mask)
-    print('Mask margin: ', margin)
+    print('Original mask margin: ', margin)
+    crop_margin = int(min(margin))
+    print('Crop margin:', crop_margin)
+    margin = [ m - crop_margin for m in margin ]
+    print('mask margin: ', margin)
+
+    print('original mask shape: ', np_mask.shape)
+    np_mask = np_mask[crop_margin:np_mask.shape[1] - crop_margin, crop_margin:np_mask.shape[0] - crop_margin]
+    print('cropped mask shape: ', np_mask.shape)
+
     mask_actual_width = np_mask.shape[1] - margin[1] - margin[3]
     mask_actual_height = np_mask.shape[0] - margin[0] - margin[2]
     print('Mask real size: ', (mask_actual_width, mask_actual_height))
