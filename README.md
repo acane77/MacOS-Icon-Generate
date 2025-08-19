@@ -9,4 +9,4 @@
 5. Drag images to XCode respectively.
 
 ## See also
-* [Apple Human Interface Design Guideline: Icons](https://developer.apple.com/design/human-interface-guidelines/macos/icons-and-images/app-icon/:wq)
+* [Apple Human Interface Design Guideline: Icons](https://developer.apple.com/design/human-interface-guidelines/macos/icons-and-images/app-icon/)
